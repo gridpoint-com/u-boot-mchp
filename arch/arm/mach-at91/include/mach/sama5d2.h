@@ -114,6 +114,7 @@
 #define ATMEL_BASE_TWI0		0xf8028000
 #define ATMEL_BASE_SFR		0xf8030000
 #define ATMEL_BASE_SYSC		0xf8048000
+#define ATMEL_BASE_SFC		0xf804c000
 #define ATMEL_BASE_SPI1		0xfc000000
 #define ATMEL_BASE_UART3	0xfc008000
 #define ATMEL_BASE_UART4	0xfc00c000
@@ -179,6 +180,21 @@
 #define ATMEL_PIO_PORTS		4
 #define CPU_HAS_PCR
 #define CPU_HAS_H32MXDIV
+
+/*
+ * SFC definitions
+ */
+#define ATMEL_SFC_KEY       0xfb
+#define ATMEL_SFC_KR        (ATMEL_BASE_SFC + 0x00)
+#define ATMEL_SFC_SR        (ATMEL_BASE_SFC + 0x1c)
+#define ATMEL_SFC_DR_BASE   (ATMEL_BASE_SFC + 0x20)
+#define ATMEL_SFC_DR(i)     (ATMEL_SFC_DR_BASE + (i << 2))
+#define ATMEL_SFC_BOOT_FUSE ATMEL_SFC_DR(16)
+
+#define ATMEL_SFC_SR_PGMC   (1 << 0)
+#define ATMEL_SFC_SR_PGMF   (1 << 1)
+
+#define ATMEL_SFC_FUSE_JTAG_DISABLE (1 << 31)
 
 /* AICREDIR Unlock Key */
 #define ATMEL_SFR_AICREDIR_KEY		0xB6D81C4D
