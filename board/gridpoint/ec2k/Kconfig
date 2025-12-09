@@ -1,0 +1,15 @@
+if TARGET_GRIDPOINT_EC2K
+
+config SYS_BOARD
+	default "ec2k"
+
+config SYS_VENDOR
+	default "gridpoint"
+
+config SYS_SOC
+	default "at91"
+
+config SYS_CONFIG_NAME
+	default "gridpoint-ec2k"
+
+endif
